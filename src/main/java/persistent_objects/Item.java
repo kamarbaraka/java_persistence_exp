@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Random;
 
-@Entity
+//@Entity
 public class Item {
     @Id
     @GeneratedValue

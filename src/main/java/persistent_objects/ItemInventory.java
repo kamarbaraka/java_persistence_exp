@@ -5,11 +5,13 @@ import javax.persistence.ForeignKey;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 
-@Entity
+//@Entity
 public class ItemInventory {
 
     @Id
     @GeneratedValue
     private long id;
+
+    private Item item;
 
 }
