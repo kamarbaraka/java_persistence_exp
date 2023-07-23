@@ -1,4 +1,6 @@
-package bussiness_objects;
+package persistent_objects;
+
+import bussiness_objects.Address;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;

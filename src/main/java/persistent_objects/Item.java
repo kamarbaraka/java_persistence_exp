@@ -5,7 +5,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import java.util.Random;
 
-//@Entity
+@Entity
 public class Item {
     @Id
     @GeneratedValue
@@ -13,6 +13,15 @@ public class Item {
     private String itemName;
     private final int serialNumber = new Random().nextInt(100000, 1000000);
     private double price;
+
+
+    public Item() {
+    }
+
+    public Item(String itemName, double price) {
+        this.itemName = itemName;
+        this.price = price;
+    }
 
     public String getItemName() {
         return itemName;
@@ -28,5 +37,15 @@ public class Item {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Item{" +
+                "id=" + id +
+                ", itemName='" + itemName + '\'' +
+                ", serialNumber=" + serialNumber +
+                ", price=" + price +
+                '}';
     }
 }

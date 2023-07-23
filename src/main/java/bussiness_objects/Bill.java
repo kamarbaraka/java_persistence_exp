@@ -1,6 +1,7 @@
 package bussiness_objects;
 
 import bussiness_objects.payments.Payment;
+import persistent_objects.Customer;
 import persistent_objects.Item;
 
 import javax.persistence.GeneratedValue;
