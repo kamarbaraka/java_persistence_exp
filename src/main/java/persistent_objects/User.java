@@ -4,6 +4,7 @@ import com.sun.istack.NotNull;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.Date;
 
 /**
  * a class to simulate a user and properties.
@@ -20,7 +21,7 @@ public class User {
     @NotNull
     private String contact;
     @NotNull
-    private Role role;
+    private String role;
 
     @Column(name = "password", nullable = false)
     private String password;
@@ -32,9 +33,9 @@ public class User {
     private Address address;
 
     @Column(name = "date_of_registration", nullable = false)
-    private final LocalDate dateOfRegistration = LocalDate.now();
+    private final Date dateOfRegistration = new Date();
 
-    public LocalDate getDateOfRegistration() {
+    public Date getDateOfRegistration() {
         return dateOfRegistration;
     }
 
@@ -97,11 +98,11 @@ public class User {
         this.contact = contact;
     }
 
-    public Role getRole() {
-        return role;
+    public String getRole() {
+        return this.role;
     }
 
-    public void setRole(Role role) {
+    public void setRole(String role) {
         this.role = role;
     }
 }
