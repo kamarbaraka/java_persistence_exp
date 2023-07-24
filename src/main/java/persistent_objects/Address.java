@@ -1,9 +1,22 @@
-package bussiness_objects;
+package persistent_objects;
 
+
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+/**
+ * a class to simulate an address.
+ * @author kamar baraka*/
+
+@Entity
 public class Address {
 
     private String street, city, country;
+    @Id
     private String zipcode;
+
+    public Address() {
+    }
 
     public Address(String street, String city, String country, String zipcode) {
         this.street = street;

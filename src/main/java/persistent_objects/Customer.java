@@ -1,39 +1,27 @@
 package persistent_objects;
 
-import bussiness_objects.Address;
+import javax.persistence.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+/**
+ * a class to represent a customer and properties.
+ * @author kamar baraka*/
 
+@Entity
 public class Customer {
 
     @Id
     @GeneratedValue
     private long id;
-    private String name, contact;
+
+    @Column(name = "customer_name", nullable = false)
+    private String customerName;
+
+    @Column(name = "customer_contact", nullable = false)
+    private String customerContact;
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = false)
+    @JoinColumn(name = "address_zipcode", nullable = false)
     private Address address;
-
-    public Customer(String name, String contact, Address address) {
-        this.name = name;
-        this.contact = contact;
-        this.address = address;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getContact() {
-        return contact;
-    }
-
-    public void setContact(String contact) {
-        this.contact = contact;
-    }
 
     public Address getAddress() {
         return address;
@@ -41,5 +29,21 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    public String getCustomerContact() {
+        return customerContact;
+    }
+
+    public void setCustomerContact(String customerContact) {
+        this.customerContact = customerContact;
+    }
+
+    public String getCustomerName() {
+        return customerName;
+    }
+
+    public void setCustomerName(String customerName) {
+        this.customerName = customerName;
     }
 }
