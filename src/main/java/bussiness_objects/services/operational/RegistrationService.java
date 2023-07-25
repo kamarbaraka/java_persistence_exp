@@ -1,7 +1,6 @@
-package bussiness_objects;
+package bussiness_objects.services.operational;
 
 import persistent_objects.Address;
-import persistent_objects.Role;
 import persistent_objects.User;
 
 import javax.persistence.*;
@@ -29,7 +28,7 @@ public class RegistrationService {
 
         /*construct an entity manager factory from which create entity manager*/
         EntityManagerFactory factory = Persistence.createEntityManagerFactory(
-                "users"
+                "inventory_management"
         );
 
         /*perform transaction with the user*/

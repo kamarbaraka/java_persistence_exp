@@ -3,6 +3,8 @@
   <component name="JpaPluginProjectSettings">
     <option name="entityNameTemplate" value="${className}" />
     <option name="generateJpaOnGetter" value="true" />
+    <option name="generateTypeOnEntity" value="true" />
+    <option name="useBuilderSetters" value="true" />
     <option name="isLombokToString" value="true" />
     <option name="isLombokOnlyExplicitlyIncluded" value="true" />
     <option name="isLombokBuilder" value="true" />

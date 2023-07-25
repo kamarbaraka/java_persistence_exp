@@ -1,5 +1,6 @@
 package bussiness_objects;
 
+import bussiness_objects.services.operational.RegistrationService;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,4 +1,4 @@
-package bussiness_objects;
+package bussiness_objects.services.operational;
 
 import persistent_objects.User;
 
@@ -58,7 +58,7 @@ public class LoginService {
 
                     /*query*/
                     manager.createQuery(
-                            "select username from User where username=:userName", String.class
+                            "from where username=:userName", String.class
                     ).setParameter("userName", userName).getSingleResult();
 
                     /*commit the query*/
@@ -74,7 +74,7 @@ public class LoginService {
                     try
                     {
                         manager.createQuery(
-                                "select password from User where password=:userPassword", String.class
+                                "select password from User user where password=:userPassword", String.class
                         ).setParameter("userPassword", userPassword).getSingleResult();
                     }
                     catch (NonUniqueResultException ignored){}
@@ -88,7 +88,7 @@ public class LoginService {
 
                     /*initialize the user object with the user from the database*/
                     user = manager.createQuery(
-                            "select user from User user where username=:userName", User.class
+                            "select * from users.user  where username=:userName", User.class
                     ).setParameter("userName", userName).getSingleResult();
 
                     /*break when all queries are successful*/

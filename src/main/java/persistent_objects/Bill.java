@@ -14,6 +14,7 @@ public class Bill {
     @GeneratedValue
     private long id;
 
+
     @ManyToOne(cascade = CascadeType.ALL, optional = false)
     @JoinColumn(name = "customer_id", nullable = false)
     private Customer customer;
